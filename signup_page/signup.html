@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Form</title>
+    <style>
+       
+       div{
+        width: 20%;
+        height: auto;
+        margin: auto;
+        background-color: #45a049;
+        padding: 5%;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        color: white;
+       }
+       form{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 15px;
+       }
+       input{
+        padding: 5%;
+        height: 30px;
+       }
+       button{
+        height: 40px;
+        /* padding: 5%; */
+        border: none;
+        background-color: green;
+        cursor: pointer;
+        color: white;
+       }
+        
+        button:hover {
+            background-color: #134315; /* Darker green color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text"  placeholder="Full Name"/>
+            <input type="email"  placeholder="Email"/>
+            <input placeholder="Organization"/>
+    
+            <button >SIGN UP</button>
+            <button >RETURN</button>
+        </form>
+    </div>
+</body>
+</html>

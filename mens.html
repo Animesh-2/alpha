@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #mensCard{
+
+    
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+            margin: auto;
+            /* border: 1px solid midnightblue; */
+
+            }
+
+            #mensCard>div>img{
+
+            width: 50%;
+            /* height: 100%; */ 
+            /* border: 1px solid black; */
+            padding: 10px;
+            margin: auto;
+            padding: auto;
+
+        }
+    </style>
+</head>
+<body >
+    
+    <div id="mensCard">
+
+
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+var mensData = [
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/l4vnbm80/t-shirt/i/j/q/m-askporgfj72665-new-allen-solly-original-imagfzk8vjxgurcj.jpeg?q=70",
+      name: "MEN'S REEBOK RUNNING ROADMAP SHOES",
+      price: "1170",
+      strikedoffprice: "2599",
+    },
+    {
+      image_url:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/r/v/k/m-ausk0165-ausk-original-imaghu9fbhcgf2za.jpeg?q=70",
+      name: "MEN'S REEBOK SWIM ARUBA FLIP SLIPPERS ",
+      price: 699,
+      strikedoffprice: 999,
+    }
+]
+
+var cart= JSON.parse(localStorage.getItem("cart"))|| [];
+  
+  mensData.forEach (function(ele,index){
+      
+    var div= document.createElement("div")
+    var img= document.createElement("img")
+    var name= document.createElement("h3")
+    var price= document.createElement("h4")
+    var strikedPrice= document.createElement("s") 
+
+    var btn= document.createElement("button")
+    btn.innerHTML= "Add to Cart"
+
+    btn.addEventListener("click", function(){
+
+      addToCart(index)
+      
+    })
+
+    img.src= ele.image_url
+    name.innerHTML= ele.name
+    price.innerText= ele.price
+    strikedPrice.textContent= ele.strikedoffprice
+
+    div.append(img, name, price, strikedPrice, btn)
+
+    var parent= document.getElementById("mensCard")
+
+    parent.append(div);
+  })
+
+ 
+</script>
